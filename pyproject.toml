@@ -1,3 +1,22 @@
-[]
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
-[]
+[project]
+name = "nott-a-raffle"
+description = "A script to do a raffle."
+readme = "README.md"
+license = { text = "GPL-3.0 license" }
+dynamic = ["version"]
+authors = [
+    { name = "ecyht2", email = "ecyht2@nottingham.edu.my" }
+]
+
+[project.scripts]
+nott-a-raffle = "nott_a_raffle.cli:main"
+
+[project.urls]
+"Homepage" = "https://github.com/IEEE-UNM/nott-a-raffle"
+
+[tool.setuptools.dynamic]
+version = { attr = "nott_your_timetable.__version__" }
