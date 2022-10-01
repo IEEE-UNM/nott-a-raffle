@@ -23,7 +23,10 @@ class Raffle(defaultdict):
 
         # Adding ticket counts
         for name, ticket in zip(names, tickets):
-            self[name] += int(ticket)
+            if int(ticket) < 0:
+                continue
+            else:
+                self[name] += int(ticket)
 
     @classmethod
     def from_csv(cls, file: str, name: str = "Name", ticket: str = "Tickets"):
